@@ -10,6 +10,8 @@
  *  1 to 4: 100% success rate.
  *  5 to 8: 90% success rate.
  *  9 and 10: 77% success rate.
+ *
+ *  Exercise Link: https://exercism.org/tracks/rust/exercises/assembly-line
  */
 
 const PRODUCTION_PER_HOUR: f64 = 221.0;
