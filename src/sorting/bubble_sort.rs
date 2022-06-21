@@ -1,19 +1,22 @@
-pub fn swap(slice: &Vec<u32>) -> Vec<u32> {
-    vec![slice[1], slice[0]]
-}
-
-pub fn bubble_sort(vec: &mut Vec<u32>) {
-    let mut temp: Vec<u32> = Vec::new();
-    for i in 0..vec.len() - 1 {
-        if vec[i] > vec[i + 1] {
-            temp.append(&mut swap(&Vec::<u32>::from(&vec[i..=i + 1])));
+pub fn bubble_sort<T: Ord>(array: &mut [T]) {
+    let mut sorted = false;
+    let mut n = array.len();
+    while !sorted {
+        sorted = true;
+        for i in 0..n - 1 {
+            if array[i] > array[i + 1] {
+                array.swap(i, i + 1);
+                sorted = false;
+            }
         }
+        n -= 1;
     }
-
-    println!("{:#?}", temp);
 }
 
 pub fn main() {
-    let mut vec: Vec<u32> = vec![5, 3, 8, 4, 6];
-    bubble_sort(&mut vec);
+    let mut vec1 = vec![5, 3, 8, 4, 6];
+
+    println!("{:?}", vec1);
+    bubble_sort(&mut vec1);
+    println!("{:?}", vec1);
 }
