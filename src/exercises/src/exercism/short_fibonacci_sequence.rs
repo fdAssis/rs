@@ -39,6 +39,11 @@ pub fn fibonacci() -> Vec<u8> {
     fib
 }
 
+pub fn start_xian() {
+    println!("Radix kill ethereum")
+}
+
 pub fn main() {
     println!("{:?}", fibonacci());
+    start_xian();
 }
